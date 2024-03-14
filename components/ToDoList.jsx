@@ -3,20 +3,17 @@ import {View, Text, Pressable, ScrollView, StyleSheet} from 'react-native';
 
 
 function ToDoList({ tasks }) {
-    return (
-          <>
-          <ScrollView>
-            {tasks.map((task, index) => (
-               <Text style={styles.taskText}>{task}</Text>
-                  // <Pressable key={index}>
-                  //   <View style={[styles.task, index % 2 === 0 && styles.completed]}>
-                  //     <Text style={styles.taskText}>{task}</Text>
-                  //   </View>
-                  // </Pressable>
-                ))}
-              </ScrollView>
-          </>
-    );
+  return (
+    <ScrollView>
+      {tasks.map((task, index) => (
+        <View key={index}>
+          <Pressable>
+            <Text style={styles.taskText}>{task}</Text>
+          </Pressable>
+        </View>
+      ))}
+    </ScrollView>
+  );
 }
 
 
